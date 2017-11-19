@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>pullload 以 body 为滚动容器</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <script src="./lib/vue.min.js"></script>
+  <link rel="stylesheet" href="./css/reset.css">
+ <script src="./countDown.js"></script>
+</head>
+
+<body>
+  <div id="test_div">
+    <count-down :targettime="targettime" @isclosed="endEvent"></count-down>
+  </div>
+
+</body>
+<script>
+  var app = new Vue({
+    el: '#test_div',
+    data: {
+      targettime:"2017-11-19-20-36-12"
+    },
+    methods: {
+      endEvent:function(){
+        console.log('计时结束了')
+      }
+    },
+
+
+  });
+</script>
+
+</html>
